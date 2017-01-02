@@ -158,9 +158,11 @@ The success chain runs as follows:
     transactions, executing a `__success` statement (if present) and then
     executing `__finally` statement (if present) in turn, until one of the
     following happens:
+
         1. a `goto __success` or a `goto __finally` statement is reached,
         2. a `goto __failure` statement is reached, or
         3. there are no more previous transactions to process.
+
   * For the first case, it simply exits the `__success` block and resumes the
     chain traversal described above.
   * For the second case, it shall initiate the error/failure chain by going
@@ -178,8 +180,10 @@ The error/failure chain runs as follows:
     transactions, executing a `__failure` statement (if present) and then
     executing `__finally` statement (if present) in turn, until one of the
     following happens:
+
         1. a `goto __failure` or a `goto __finally` statement is reached, or
         2. there are no more previous transactions to process.
+
   * For the first case, it simply exits the `__failure` block and resume the
     chain traversal described above.
   * The second case simply causes it to exit the current block, and if that
