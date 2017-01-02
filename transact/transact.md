@@ -4,7 +4,7 @@ Here's an example illustrating this new "idea" (pseudocode):
 
 ~~~~
    transact {
-      construct valid URL
+      construct URL
       error invalid URL: ....
 
       open( ... )
@@ -27,7 +27,7 @@ with, and the "open" and subsequent statements don't get executed at all! And as
 bonus, one would not have to use `goto` statement, or similar hacks. Nice, IMHO!
 
 Future addition:  `retry` statement would let you retry the transact, much like a
-C's continue` statement would in a loop. But `retry` would be more intelligent...it
+C's `continue` statement would in a loop. But `retry` would be more intelligent...it
 would go back to the last "good run" point inside the transact body.
 
 ## Problem addressed
@@ -154,19 +154,19 @@ Executing `goto __success` in the the `statement` portion of the block section
 shall initiate a success chain.
 
 The success chain runs as follows:
-    Starting with a current block section, go through a series of previous
+  * Starting with a current block section, go through a series of previous
     transactions, executing a `__success` statement (if present) and then
     executing `__finally` statement (if present) in turn, until one of the
     following happens:
-        (1) a `goto __success` or a `goto __finally` statement is reached,
-        (2) a `goto __failure` statement is reached, or
-        (3) there are no more previous transactions to process.
-    For the first case, it simply exits the `__success` block and resumes the
+        1. a `goto __success` or a `goto __finally` statement is reached,
+        2. a `goto __failure` statement is reached, or
+        3. there are no more previous transactions to process.
+  * For the first case, it simply exits the `__success` block and resumes the
     chain traversal described above.
-    For the second case, it shall initiate the error/failure chain by going
+  * For the second case, it shall initiate the error/failure chain by going
     straight to the first `__failure` statement (the `__error` statement is
     *NEVER* invoked here!).
-    The third case simply causes it to exit the current block, and if that
+  * The third case simply causes it to exit the current block, and if that
     block is nested inside another block, the success chain proceeds in that
     outer block, all the way up to the outermost block, and in that case, it
     simply goes to the end of the block, as if there is an invisible label
@@ -174,15 +174,15 @@ The success chain runs as follows:
     pointing to that label.
 
 The error/failure chain runs as follows:
-    Starting with a current block section, go through a series of previous
+  * Starting with a current block section, go through a series of previous
     transactions, executing a `__failure` statement (if present) and then
     executing `__finally` statement (if present) in turn, until one of the
     following happens:
-        (1) a `goto __failure` or a `goto __finally` statement is reached, or
-        (2) there are no more previous transactions to process.
-    For the first case, it simply exits the `__failure` block and resume the
+        1. a `goto __failure` or a `goto __finally` statement is reached, or
+        2. there are no more previous transactions to process.
+  * For the first case, it simply exits the `__failure` block and resume the
     chain traversal described above.
-    The second case simply causes it to exit the current block, and if that
+  * The second case simply causes it to exit the current block, and if that
     block is nested inside another block, the success chain proceeds in that
     outer block, all the way up to the outermost block, and in that case, it
     simply goes to the end of the block, as if there is an invisible label
@@ -228,7 +228,7 @@ Rule #5:  There is no default `__error` transact (hence the reason for rule
 ```
 
 Rule #6:  All transacts, whether explicit or default, start with a
-          label `_tNNSSx:`, where x is one of four possible letters
+          label `_tNNSSx:`, where `x` is one of four possible letters
           'e', 's', 'f', and 'c'.
 
 Rule #7:  The "final" labels are placed at the end...
