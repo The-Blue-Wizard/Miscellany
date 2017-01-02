@@ -1,0 +1,27 @@
+/* @ translator */
+
+/*
+ * test the translator on a plain vanilla
+ * code (the so-called Skeleton code, not
+ * the T-Skeleton code, both being described
+ * in transact.py
+ */
+
+func {
+  stmt
+  stmt
+  flowstmt {
+    stmt
+  }
+  stmt
+}
+
+func {
+  stmt
+  {
+    stmt
+  }
+}
+
+func {
+}

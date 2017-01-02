@@ -1,0 +1,66 @@
+/* @ translator */
+
+/*
+ * test the translator on a plain vanilla
+ * code (the so-called Skeleton code, not
+ * the T-Skeleton code, both being described
+ * in transact.py
+ */
+
+func {int __tfailure = 0;
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:
+_t0100s: goto _t0100c;
+_tfailure = 1;
+_t0100f: goto _t0100c;
+_t0100c:
+    if (_tfailure) goto _t01-1f;
+    else           goto _t01-1s;
+_t0101:

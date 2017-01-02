@@ -1,0 +1,18 @@
+func {
+  stmt
+  flowstmt { stmt stmt } stmt
+  stmt {
+    stmt
+    goto __error
+  }
+  stmt
+}
+
+func {
+  stmt {
+    { flowstmt { stmt stmt } stmt }
+  }
+}
+
+func {
+}

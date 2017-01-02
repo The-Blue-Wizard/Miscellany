@@ -1,0 +1,33 @@
+/* @ injectableparser */
+
+/* test the injection of the code */
+
+
+/****** a series of inject streams ******/
+
+/* @ flowstmt { stmt stmt } stmt */
+
+/* @ flowstmt { stmt stmt } stmt */
+
+
+/****** main template ******/
+
+
+func {
+  stmt
+  #
+  stmt {
+    stmt
+    goto __error
+  }
+  stmt
+}
+
+func {
+  stmt {
+    { # }
+  }
+}
+
+func {
+}

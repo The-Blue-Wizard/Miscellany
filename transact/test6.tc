@@ -1,0 +1,21 @@
+/* @ translator */
+
+/*
+ * test the translator on the most simple
+ * T-Skeleton code possible, namely the one
+ * containing just the __finally transacts.
+ */
+
+func {
+   stmt
+   stmt
+
+   __transact stmt
+
+   stmt
+   flowstmt { stmt stmt }
+
+   __finally { stmt stmt }
+
+   stmt
+}

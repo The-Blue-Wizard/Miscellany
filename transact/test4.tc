@@ -1,0 +1,23 @@
+/* @ translatorparser */
+/* test translatorparser's ability to
+   automatically translate __check
+   statements */
+
+func {
+  stmt
+  __check var
+  stmt {
+    stmt
+    goto __error
+  }
+  stmt
+}
+
+func {
+  stmt {
+    { __check ptr }
+  }
+}
+
+func {
+}

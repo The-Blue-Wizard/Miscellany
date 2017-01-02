@@ -1,0 +1,21 @@
+/* @ parser */
+/* test the parser's tokenizing */
+
+func {
+  stmt
+  stmt
+  stmt {
+    stmt
+    goto __error
+  }
+  stmt
+}
+
+func {
+  stmt {
+    { }
+  }
+}
+
+func {
+}

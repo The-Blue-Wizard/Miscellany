@@ -1,0 +1,14 @@
+func {
+   stmt
+   tag1
+   stmt
+   flowstmt {
+      stmt
+      { tag2
+     stmt
+     stmt
+   }
+      stmt
+   }
+   flowstmt {tag3}
+}

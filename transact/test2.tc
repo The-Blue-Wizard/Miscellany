@@ -1,0 +1,32 @@
+/* @ writer */
+
+/* test the writer's ability to output stuff
+   in properly indented format */
+
+/****** a series of text string substitutions follows ******/
+
+/* @ tag1 */
+
+/*
+@ { tag2
+     stmt
+     stmt
+   }
+*/
+
+/* @ tag3 */
+
+
+/****** main template ******/
+
+func {
+   stmt
+#
+   stmt
+   flowstmt {
+      stmt
+#
+      stmt
+   }
+   flowstmt {#}
+}
